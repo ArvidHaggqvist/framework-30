@@ -47,7 +47,7 @@
 		        	SET field=?
 		        	WHERE fieldname=?";
 
-			$this->updateDb($sql, [$value, $match]);
+			$this->updateDb($sql, [$questionmarkonevalue, $questionmarktwovalue]);
 
     	}
 
