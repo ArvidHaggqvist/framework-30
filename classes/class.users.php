@@ -7,13 +7,7 @@
 		use CoreFunctions;
 
 		protected $_db;
- 
-	    /**
-	     * Checks for a database object and creates one if none is found
-	     *
-	     * @param object $db
-	     * @return void
-	     */
+
 	    public function __construct($db=NULL) {
 	        if(is_object($db))
 	        {
