@@ -3,7 +3,7 @@ framework-30
 
 Framework-30 is a super-simple and lightweight PHP framework for quickly getting started building applications that requires a user system including sign up, password encryption and login. Framework-30 also provides a small set of CRUD helper functions. 
 
-IMPORTANT NOTICE: This project is still very much a work in progress and it is essentially my first experience with PHP so there are bound to be mistakes, ugly code and general unpleasentness. If you run in to a problem or have any opinions on the project I'd be very glad to hear them: shoot me an email at arvid.haggqvist@gmail.com. 
+**IMPORTANT NOTICE:** This project is still very much a work in progress and it is essentially my first experience with PHP so there are bound to be mistakes, ugly code and general unpleasentness. If you run in to a problem or have any opinions on the project I'd be very glad to hear them: shoot me an email at arvid.haggqvist@gmail.com. 
 
 ## Requirments
 
