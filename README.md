@@ -1,7 +1,7 @@
 framework-30
 ============
 
-Framework-30 is a super-simple and lightweight PHP framework for quickly getting started building applications that requires a user system including sign up, password encryption and login. Framework-30 also provides a small set of CRUD helper functions. 
+Framework-30 is a super-simple and lightweight PHP framework for quickly getting started building applications that requires a user system including sign up, password encryption and login. Framework-30 also provides a small set of CRUD helper functions. IMPORTANT NOTICE: This project is still very much a work in progress and it is my first experience with PHP so there are bound to be mistakes, ugly code and general unpleasentness. If you run in to a problem or have any opinions on the project I'd be very glad to hear them: shoot me an email at arvid.haggqvist@gmail.com. 
 
 ## Requirments
 
@@ -18,3 +18,30 @@ There have been problems when using the crud-trait together with Xcache do if th
 2. Create a table called 'users', containing four fields: id(integer, auto-increment), username(varchar, any given length), password(same as username) and email(same).
 3. Remove any purely educational files if you do not need them, such as class.samplecrud.php or sampleaction.php
 4. Get started building and modifying your project
+
+## Usage of CRUD helper functions
+
+Currently there are four functions in the trait.crud.php file, all of these are intended to be used within classes that perform database operations. These four functions are queryDb, insert, updateDb and removeFromDb.
+
+queryDb takes three parameters: $query, $parameters & $bindings where $query is a string and the other two are arrays. It looks something like this:
+
+    $sql = "SELECT field FROM tablename WHERE fieldname=:val";
+    $result = $this->queryDb($sql, [':val'], ['correspondingValue']]);
+    
+insert takes the same parameters and works in essentially the same way: 
+
+    $sql = 'INSERT INTO tablename (field,field2) VALUES ( :value, :value2 )';
+    $this->insert($sql, [':value', ':value2'], [$value, $value2]);
+    
+updateDb is slightly different, it takes the $query and the $bindings parameters and the SQL query should be formatted using question marks like this:
+
+    $sql = "UPDATE tablename
+            SET field=?
+            WHERE fieldname=?";
+    $this->updateDb($sql, [$questionmarkonevalue, $questionmarktwovalue]);
+    
+deleteFromDb works pretty much like the queryDb-function:
+
+    $sql = "DELETE FROM tablename WHERE fieldname=:val";
+    $this->deleteFromDb($sql, [':val'], ['correspondingValue']);
+    
