@@ -4,8 +4,7 @@ session_start();
 	 // Catch all errors, display them one at the time
     error_reporting(E_ALL);
     ini_set("display_errors", 1);
- 
-    // Include site constants
+
     include_once "constants.php";
  
     // Create a database object
