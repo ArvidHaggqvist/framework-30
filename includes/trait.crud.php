@@ -2,7 +2,7 @@
 
     trait CoreFunctions {
 
-        public function queryDb($query, $params, $bindings) {
+        public function queryDb($query, $params, $bindings, $fetch) {
             try {
                 $i = 0;
                 $stmt = $this->_db->prepare($query);
@@ -11,7 +11,7 @@
                     $i++;
                 }
                 $stmt->execute();
-                return $stmt->fetchAll();
+                return $stmt->fetchAll($fetch);
             }
             catch(PDOException $e) {
                 return FALSE;
