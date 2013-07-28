@@ -25,10 +25,12 @@ There have been problems when using the crud-trait together with Xcache do if th
 
 Currently there are four functions in the trait.crud.php file, all of these are intended to be used within classes that perform database operations. These four functions are queryDb, insert, updateDb and removeFromDb.
 
-queryDb takes three parameters: $query, $parameters & $bindings where $query is a string and the other two are arrays. It looks something like this:
+queryDb takes four parameters: $query, $parameters & $bindings and $fetch where $query is a string and the two following are arrays. It looks something like this:
 
     $sql = "SELECT field FROM tablename WHERE fieldname=:val";
     $result = $this->queryDb($sql, [':val'], ['correspondingValue']]);
+    
+The $fetch parameter is used for specifying the way the results are fetched, see php.net documentation for pdo exexute fetch statements. 
     
 insert takes the same parameters and works in essentially the same way: 
 
