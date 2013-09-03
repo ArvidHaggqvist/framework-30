@@ -28,6 +28,9 @@
 			        $salt = '$2y$11$' . substr(md5(uniqid(rand(), true)), 0, 22);
 			        return crypt($password, $salt);
 			    }
+			    else {
+			    	return $password;
+			    }
 			}
 			$password = generateHash($password);
 
