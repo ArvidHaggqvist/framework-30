@@ -2,7 +2,7 @@
 
     trait CoreFunctions {
 
-        public function queryDb($query, $params, $bindings, $fetch) {
+        public function queryDb($query, $params, $bindings, $fetch = PDO::FETCH_BOTH) {
             try {
                 $i = 0;
                 $stmt = $this->_db->prepare($query);
