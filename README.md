@@ -30,7 +30,7 @@ queryDb takes four parameters: $query, $parameters & $bindings and $fetch where 
     $sql = "SELECT field FROM tablename WHERE fieldname=:val";
     $result = $this->queryDb($sql, [':val'], ['correspondingValue']]);
     
-The $fetch parameter is used for specifying the way the results are fetched, see php.net documentation for pdo exexute fetch statements. 
+The $fetch parameter is used for specifying the way the results are fetched, see php.net documentation for pdo exexute fetch statements. The default value here is PDO::FETCH_BOTH.
     
 insert takes the same parameters and works in essentially the same way: 
 
