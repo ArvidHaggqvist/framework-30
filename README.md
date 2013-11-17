@@ -23,7 +23,7 @@ There have been problems when using the crud-trait together with Xcache do if th
 
 ## Usage of CRUD helper functions
 
-Currently there are four functions in the trait.crud.php file, all of these are intended to be used within classes that perform database operations. These four functions are queryDb, insert, updateDb and removeFromDb.
+Currently there are five functions in the trait.crud.php file, all of these are intended to be used within classes that perform database operations. These four functions are queryDb, insert, updateDb and removeFromDb.
 
 queryDb takes four parameters: $query, $parameters & $bindings and $fetch where $query is a string and the two following are arrays. It looks something like this:
 
@@ -48,4 +48,8 @@ deleteFromDb works pretty much like the queryDb-function:
 
     $sql = "DELETE FROM tablename WHERE fieldname=:val";
     $this->deleteFromDb($sql, [':val'], ['correspondingValue']);
+    
+incrementField simplifies the task of incrementing the value of a particular field in a database table. You provide the tablename, the name of the field, the id of the row where the correct field can be located and by how much you want the field to be incremented. 
+
+    $this->incrementField('comments', 'num_replies', $comment_id, 1);
     
