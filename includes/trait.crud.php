@@ -52,7 +52,7 @@
         
         public function incrementField($table, $field, $fieldid, $incrementation) {
             $select = "SELECT $field FROM $table WHERE id=:id";
-            $result = $this->queryDb($select, [':id'], [$fieldid])[0][$field];
+            $result = $this->queryDb($select, [':id'], [$fieldid])[0][0];
             $update = "UPDATE $table SET $field = ? WHERE id = ?";
             $this->updateDb($update, [$result + $incrementation, $fieldid]);
         }
